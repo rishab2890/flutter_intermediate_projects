@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'smart_flare_animation.dart';
+import 'package:flare_tutorial/smart_flare_animation.dart';
 
 class FlareDemo extends StatefulWidget {
   @override

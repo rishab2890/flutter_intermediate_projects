@@ -1,5 +1,6 @@
+import 'package:flare_tutorial/smart_flare_animation.dart';
 import 'package:flutter/material.dart';
-import 'flare_demo.dart';
+import 'package:flare_tutorial/flare_demo.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,6 +13,6 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: FlareDemo());
+        home: SmartFlareAnimation());
   }
 }
