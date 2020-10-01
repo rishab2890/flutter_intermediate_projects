@@ -1,5 +1,6 @@
+import 'dart:io';
+import 'package:image_picker/image_picker.dart';
 import 'package:flutter/material.dart';
-import 'package:random_color/random_color.dart';
 
 int num = 0;
 
@@ -12,12 +13,26 @@ class _MovableStackItemState extends State<MovableStackItem> {
   double xPosition = 0;
   double yPosition = 0;
 
-  Color color;
-  @override
-  void initState() {
-    color = RandomColor().randomColor();
+  // Color color;
+  // @override
+  // void initState() {
+  //   color = RandomColor().randomColor();
 
-    super.initState();
+  //   super.initState();
+  // }
+  File _image;
+  final picker = ImagePicker();
+
+  Future getImage() async {
+    final pickedFile = await picker.getImage(source: ImageSource.gallery);
+
+    setState(() {
+      if (pickedFile != null) {
+        _image = File(pickedFile.path);
+      } else {
+        print('No image selected.');
+      }
+    });
   }
 
   @override
@@ -36,14 +51,16 @@ class _MovableStackItemState extends State<MovableStackItem> {
           alignment: Alignment.center,
           width: 150,
           height: 150,
-          color: color,
-          child: Text(
-            num.toString(),
-            style: TextStyle(
-              color: Colors.white,
-            ),
-            textAlign: TextAlign.center,
-          ),
+          // color: color,
+          // child: Text(
+          //   num.toString(),
+          //   style: TextStyle(
+          //     color: Colors.white,
+          //   ),
+          //   textAlign: TextAlign.center,
+          // ),
+          child:
+              _image == null ? Text('No image selected.') : Image.file(_image),
         ),
       ),
     );
