@@ -43,6 +43,29 @@ class SlideBar extends StatelessWidget {
           subtitle: Text("Choose what you are craving for"),
         ),
       ),
+      secondaryActions: [
+        IconSlideAction(
+          caption: "food",
+          color: Colors.orange,
+          icon: Icons.fastfood,
+          onTap: () {},
+        ),
+        IconSlideAction(
+          caption: "food",
+          color: Colors.black,
+          icon: Icons.fastfood,
+        ),
+        IconSlideAction(
+          caption: "food",
+          color: Colors.blue,
+          icon: Icons.fastfood,
+        ),
+        IconSlideAction(
+          caption: "food",
+          color: Colors.red,
+          icon: Icons.fastfood,
+        ),
+      ],
     );
   }
 }
